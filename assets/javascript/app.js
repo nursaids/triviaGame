@@ -1,18 +1,3 @@
-var countDown = (50,"countDown");
-
-
-function countDown(secs,elem) {
-    var element = document.getElementById(elem);
-    element.innerHTML = "Time remaining: "+secs+" seconds";
-
-   
-
-}
-
-
-
-
-
 const myQuestions = [
     {
         question: "What state is Sopranos tv show taking place at?",
@@ -32,7 +17,7 @@ const myQuestions = [
     {
 
 
-        question: "What was the name of drug that was produced in tv series Breaking Bad?",
+        question: "What was the name of the drugs that was produced in tv series Breaking Bad?",
 
         answers: {
 
@@ -47,6 +32,79 @@ const myQuestions = [
     },
 
 
+
+    {
+
+
+        question: "What type of genre is Friends tv shows?",
+
+        answers: {
+
+            a: "Drama",
+            b: "Comedy",
+            c: "Horror",
+            d: "Crime"
+
+
+        },
+        correctAnswer: "b"
+    },
+
+   
+    {
+
+
+        question: "What Famous tv show airs on HBO?",
+
+        answers: {
+
+            a: "Friends",
+            b: "Family Guy",
+            c: "Game of Thrones",
+            d: "Two and half man"
+
+
+        },
+        correctAnswer: "c"
+    },
+
+
+    {
+
+
+        question: "Which famous cartoon is charater Brian Grifin on?",
+
+        answers: {
+
+            a: "Robot Chicken",
+            b: "Family Guy",
+            c: "American Dad",
+            d: "Family Guy"
+
+
+        },
+        correctAnswer: "b"
+    },
+
+
+
+    {
+        question: "Which of these is not real character from Family Guy cartoon?",
+
+        answers: {
+
+            a: "Brian",
+            b: "Steven",
+            c: "Stewie",
+            d: "Peter"
+
+
+
+        },
+
+        correctAnswer: "b"
+
+    },
 
 
 
@@ -73,9 +131,9 @@ const myQuestions = [
 
         answers: {
 
-            a: "bikes",
-            b: "bicycles",
-            c: "planes",
+            a: "Bikes",
+            b: "Bicycles",
+            c: "Planes",
             d: "Scooters"
 
 
@@ -149,11 +207,31 @@ myQuestions.forEach((currentQuestion, questionNumber) =>{
 
 
     });
+
     
-function showResults(){}
+    
+function showResults(){
+    
+}
+
+
+var timeleft = 60;
+var downloadTimer = setInterval(function(){
+  document.getElementById("countdown").innerHTML = timeleft + " seconds remaining";
+  timeleft -= 1;
+  if(timeleft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("countdown").innerHTML = "Finished"
+  }
+}, 1000);
+
+
+
+
+
 
 buildTrivia();
 
 
-submitButton.addEventListener("click", showResults);
+
 
